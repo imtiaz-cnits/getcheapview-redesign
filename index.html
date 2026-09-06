@@ -1,0 +1,404 @@
+<!-- Google Fonts: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN & Configuration -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          poppins: ['Poppins', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            blue: '#0070ba',
+            darkblue: '#003087',
+            navy: '#0b192c',
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<section id="services-section" class="py-20 bg-slate-50/60 relative overflow-hidden font-poppins" style="font-family: 'Poppins', sans-serif;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- সেকশন হেডার -->
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#0070ba] text-xs font-semibold tracking-wide mb-4 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-[#0070ba] animate-pulse"></span>
+        Instant Automated Delivery
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        Select a Platform to Explore Packages
+      </h2>
+      <p class="mt-3 text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
+        High-retention, password-free growth services curated for creators and businesses.
+      </p>
+    </div>
+
+    <!-- আধুনিক সেগমেন্টেড ট্যাব বার -->
+    <div class="flex justify-center mb-14">
+      <div class="inline-flex items-center p-1.5 bg-white border border-slate-200/90 rounded-2xl shadow-sm gap-1.5 max-w-full overflow-x-auto no-scrollbar">
+        
+        <!-- Instagram Tab -->
+        <button onclick="switchTab('instagram')" id="tab-instagram" data-platform="instagram" class="tab-btn active-tab flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 bg-[#0070ba] text-white shadow-md shadow-blue-600/20 whitespace-nowrap">
+          <svg class="tab-icon w-5 h-5 flex-shrink-0 fill-current transition-colors duration-200" style="color: #E4405F;" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </button>
+
+        <!-- YouTube Tab -->
+        <button onclick="switchTab('youtube')" id="tab-youtube" data-platform="youtube" class="tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+          <svg class="tab-icon w-5 h-5 flex-shrink-0 fill-current text-slate-400 transition-colors duration-200" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </button>
+
+        <!-- TikTok Tab -->
+        <button onclick="switchTab('tiktok')" id="tab-tiktok" data-platform="tiktok" class="tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+          <svg class="tab-icon w-5 h-5 flex-shrink-0 fill-current text-slate-400 transition-colors duration-200" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.28-1.53 3.32-3.34.02-4.14.01-8.28.01-12.42z"/></svg>
+          TikTok
+        </button>
+
+        <!-- Facebook Tab -->
+        <button onclick="switchTab('facebook')" id="tab-facebook" data-platform="facebook" class="tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+          <svg class="tab-icon w-5 h-5 flex-shrink-0 fill-current text-slate-400 transition-colors duration-200" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </button>
+
+        <!-- Spotify Tab -->
+        <button onclick="switchTab('spotify')" id="tab-spotify" data-platform="spotify" class="tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+          <svg class="tab-icon w-5 h-5 flex-shrink-0 fill-current text-slate-400 transition-colors duration-200" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.308c-.218.358-.683.473-1.041.254-2.855-1.745-6.449-2.14-10.682-1.173-.41.094-.814-.162-.907-.573-.094-.41.162-.814.573-.907 4.636-1.059 8.601-.617 11.803 1.341.358.218.473.683.254 1.058zm1.47-3.266c-.275.447-.862.59-1.309.315-3.268-2.008-8.25-2.59-12.115-1.417-.502.152-1.034-.135-1.186-.637-.152-.502.135-1.034.637-1.186 4.417-1.341 9.914-.693 13.658 1.616.447.275.59.862.315 1.309zm.126-3.41c-3.919-2.327-10.384-2.541-14.135-1.401-.6.183-1.238-.16-1.421-.76-.183-.6.16-1.238.76-1.421 4.316-1.311 11.455-1.06 15.98 1.626.54.321.716 1.02.395 1.561-.321.541-1.02.716-1.561.395z"/></svg>
+          Spotify
+        </button>
+
+        <!-- SoundCloud Tab -->
+        <button onclick="switchTab('soundcloud')" id="tab-soundcloud" data-platform="soundcloud" class="tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+          <svg class="tab-icon w-5 h-5 flex-shrink-0 fill-current text-slate-400 transition-colors duration-200" viewBox="0 0 24 24"><path d="M1.175 12.225c-.051 0-.094.045-.102.102L.8 15.006l.273 2.654c.008.058.051.102.102.102.059 0 .102-.044.11-.102l.307-2.654-.307-2.679c-.008-.057-.051-.102-.11-.102zm1.459-1.246c-.077 0-.137.06-.145.137L2.148 15l.341 3.864c.008.077.068.137.145.137.068 0 .128-.06.136-.137L3.14 15l-.37-3.972c-.008-.077-.068-.137-.136-.137zm1.621-.699c-.094 0-.17.077-.179.17l-.4 4.55.4 4.541c.009.094.085.17.179.17.085 0 .162-.076.17-.17l.444-4.541-.444-4.55c-.008-.093-.085-.17-.17-.17zm1.74-.801c-.111 0-.205.093-.213.204l-.452 5.347.452 5.338c.008.111.102.204.213.204.102 0 .196-.093.204-.204l.504-5.338-.504-5.347c-.008-.111-.102-.204-.204-.204zm1.782-.247c-.128 0-.239.111-.247.239l-.478 5.586.478 5.594c.008.128.119.239.247.239.12 0 .23-.111.239-.239l.537-5.594-.537-5.586c-.009-.128-.119-.239-.239-.239zm12.398-3.053c-.563 0-1.108.119-1.603.332-.384-2.839-2.814-5.029-5.748-5.029-.716 0-1.407.136-2.037.392-.256.102-.375.383-.281.639.094.247.375.375.631.281.537-.222 1.117-.333 1.687-.333 2.456 0 4.502 1.79 4.809 4.195.034.264.247.46.511.46.06 0 .12-.008.179-.025.503-.171 1.04-.264 1.586-.264 2.507 0 4.545 2.038 4.545 4.545s-2.038 4.545-4.545 4.545h-7.615c-.273 0-.495.222-.495.495s.222.495.495.495h7.615c3.053 0 5.535-2.481 5.535-5.535s-2.482-5.535-5.535-5.535z"/></svg>
+          SoundCloud
+        </button>
+
+      </div>
+    </div>
+
+    <!-- 1. Instagram Content (Default Active) -->
+    <div id="content-instagram" class="tab-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Top Seller</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Instagram Followers</h3>
+          <p class="text-slate-500 text-sm mt-1">High retention real profile followers</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$3</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Instant Start (Within 1 Hour)</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>No Password Required</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>365 Days Refill Guarantee</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide" data-price="3" data-service="1000 Instagram Followers">
+          Order Now
+        </button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+        <div class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">Popular</div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Instant Boost</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">2,500 Instagram Followers</h3>
+          <p class="text-slate-500 text-sm mt-1">Accelerate your profile visibility</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-[#0070ba]">$7</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Fast & Organic Delivery</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>No Password Required</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>365 Days Refill Guarantee</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide" data-price="7" data-service="2500 Instagram Followers">
+          Order Now
+        </button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Engagement</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 Instagram Likes</h3>
+          <p class="text-slate-500 text-sm mt-1">Split across multiple photos/reels</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$6</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Super Fast Delivery</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Real Post Interactions</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>No Password Required</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide" data-price="6" data-service="5000 Instagram Likes">
+          Order Now
+        </button>
+      </div>
+
+    </div>
+
+    <!-- 2. YouTube Content -->
+    <div id="content-youtube" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full">Monetization Ready</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">2,500 YouTube Views</h3>
+          <p class="text-slate-500 text-sm mt-1">High watch-time video views</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$8</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Non-Drop & Lifetime Safe</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Good Watchtime Duration</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>24/7 Dedicated Support</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="8" data-service="2500 YouTube Views">
+          Order Now
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. TikTok Content -->
+    <div id="content-tiktok" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 px-3 py-1 rounded-full">Viral Package</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">10,000 TikTok Views</h3>
+          <p class="text-slate-500 text-sm mt-1">Boost FYP algorithm placement</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$4</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Instant 5-Minute Delivery</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Public Video Link Only</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="4" data-service="10000 TikTok Views">
+          Order Now
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. Facebook Content -->
+    <div id="content-facebook" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Page Authority</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Facebook Page Likes</h3>
+          <p class="text-slate-500 text-sm mt-1">Real & active follower likes</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$12</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Likes + Followers Included</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>No Admin Access Needed</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="12" data-service="1000 Facebook Page Likes">
+          Order Now
+        </button>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Stream Boost</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">Facebook Live Stream Views</h3>
+          <p class="text-slate-500 text-sm mt-1">Live audience for 60 minutes</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$15</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Instant Stream Connection</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Stable Audience Retention</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="15" data-service="Facebook Live Stream Views">
+          Order Now
+        </button>
+      </div>
+    </div>
+
+    <!-- 5. Spotify Content -->
+    <div id="content-spotify" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full">Royalties Safe</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Spotify Plays</h3>
+          <p class="text-slate-500 text-sm mt-1">Track stream optimization</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$5</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>USA & Worldwide Mix</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Eligible for Royalties</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="5" data-service="1000 Spotify Plays">
+          Order Now
+        </button>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full">Artist Profile</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Spotify Followers</h3>
+          <p class="text-slate-500 text-sm mt-1">Grow artist account authority</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$6</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Permanent Organic Growth</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>No Login Required</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="6" data-service="1000 Spotify Followers">
+          Order Now
+        </button>
+      </div>
+    </div>
+
+    <!-- 6. SoundCloud Content -->
+    <div id="content-soundcloud" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Audio Growth</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 SoundCloud Plays</h3>
+          <p class="text-slate-500 text-sm mt-1">Instant song boost</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$5</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>High Retention Tracks</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Safe & Guaranteed</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="5" data-service="5000 SoundCloud Plays">
+          Order Now
+        </button>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Follower Authority</span>
+          <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 SoundCloud Followers</h3>
+          <p class="text-slate-500 text-sm mt-1">Build musical credibility</p>
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$7</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Natural Delivery Speed</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Safe Profile URL Only</li>
+          </ul>
+        </div>
+        <button class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide" data-price="7" data-service="1000 SoundCloud Followers">
+          Order Now
+        </button>
+      </div>
+    </div>
+
+    <!-- প্যানেল প্রমোশন ব্যানার -->
+    <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#003087] to-[#0070ba] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div>
+        <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">Automated SMM Panel</span>
+        <h4 class="text-xl sm:text-2xl font-bold mt-2.5">Need bulk orders or instant 1-second delivery?</h4>
+        <p class="text-blue-100 text-sm mt-1 font-normal">Sign up on our automated system to place orders anytime and track live progress.</p>
+      </div>
+      <a href="https://getcheapview.net" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-white hover:bg-slate-100 text-[#003087] font-bold text-sm rounded-xl transition duration-200 shadow-md whitespace-nowrap tracking-wide">
+        Sign Up Free on Panel →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ট্যাব সুইচিং জাভাস্ক্রিপ্ট -->
+<script>
+// প্রতিটি প্ল্যাটফর্মের অফিসিয়াল ব্র্যান্ড কালার ডিকশনারি
+const brandColors = {
+  instagram: '#E4405F',
+  youtube: '#FF0000',
+  tiktok: '#00F2FE',
+  facebook: '#1877F2',
+  spotify: '#1DB954',
+  soundcloud: '#FF5500'
+};
+
+function switchTab(platform) {
+  // সকল ট্যাব কন্টেন্ট লুকানো
+  document.querySelectorAll('.tab-content').forEach(content => {
+    content.classList.add('hidden');
+  });
+
+  // সকল ট্যাব বাটন ও আইকন ডিফল্ট করা
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('bg-[#0070ba]', 'text-white', 'shadow-md', 'shadow-blue-600/20', 'font-semibold', 'active-tab');
+    btn.classList.add('text-slate-600', 'font-medium', 'hover:text-slate-900', 'hover:bg-slate-100/70');
+    
+    // ইন-অ্যাক্টিভ আইকনকে নরমাল স্লেট কালার দেওয়া
+    const icon = btn.querySelector('.tab-icon');
+    if(icon) {
+      icon.style.color = '';
+      icon.classList.add('text-slate-400');
+    }
+  });
+
+  // নির্বাচিত কন্টেন্ট দেখানো
+  const activeContent = document.getElementById('content-' + platform);
+  if(activeContent) {
+    activeContent.classList.remove('hidden');
+  }
+
+  // নির্বাচিত বাটন ও তার আইকনকে অফিসিয়াল ব্র্যান্ড কালার দেওয়া
+  const activeBtn = document.getElementById('tab-' + platform);
+  if(activeBtn) {
+    activeBtn.classList.add('bg-[#0070ba]', 'text-white', 'shadow-md', 'shadow-blue-600/20', 'font-semibold', 'active-tab');
+    activeBtn.classList.remove('text-slate-600', 'font-medium', 'hover:text-slate-900', 'hover:bg-slate-100/70');
+    
+    const activeIcon = activeBtn.querySelector('.tab-icon');
+    if(activeIcon && brandColors[platform]) {
+      activeIcon.classList.remove('text-slate-400');
+      activeIcon.style.color = brandColors[platform];
+    }
+  }
+}
+</script>
+
+<style>
+#services-section, 
+#services-section * {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
