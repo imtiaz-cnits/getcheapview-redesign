@@ -46,7 +46,7 @@
         <div
           class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#0070ba] text-xs font-semibold tracking-wide mb-4 shadow-sm">
           <span class="w-2 h-2 rounded-full bg-[#0070ba] animate-pulse"></span>
-          Instant Automated Delivery
+          Option A (Method 2) — In-Card Dropdown Selector
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
           Select a Platform to Explore Packages
@@ -133,24 +133,57 @@
       <!-- 1. Instagram Content (Default Active) -->
       <div id="content-instagram" class="tab-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Card 1 -->
-        <div
+        <!-- Card 1: Instagram Followers -->
+        <div id="card-ig-followers"
           class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
-            <span
-              class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Top
-              Seller</span>
-            <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Instagram Followers</h3>
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Top
+                Seller</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mt-4">Instagram Followers</h3>
             <p class="text-slate-500 text-sm mt-1">High retention real profile followers</p>
-            <div class="my-6">
-              <span class="text-4xl font-extrabold text-slate-900">$3</span>
+
+            <!-- Quantity Selector Dropdown -->
+            <div class="mt-5">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Select
+                Package</label>
+              <div class="relative">
+                <select onchange="updateCardPackage('ig-followers', this)"
+                  class="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-sm font-semibold rounded-xl px-3.5 py-3 pr-9 appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0070ba]/20 focus:border-[#0070ba] transition">
+                  <option value='{"price":"2","service":"500 Instagram Followers"}'>500 Followers — $2</option>
+                  <option value='{"price":"3","service":"1000 Instagram Followers"}' selected>1,000 Followers — $3 (Most
+                    Popular)</option>
+                  <option value='{"price":"7","service":"2500 Instagram Followers"}'>2,500 Followers — $7</option>
+                  <option value='{"price":"13","service":"5000 Instagram Followers"}'>5,000 Followers — $13</option>
+                  <option value='{"price":"24","service":"10000 Instagram Followers"}'>10,000 Followers — $24</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-slate-400">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Display -->
+            <div class="my-6 flex items-baseline gap-1.5">
+              <span class="text-4xl font-extrabold text-slate-900 card-price-display">$3</span>
               <span class="text-slate-400 text-sm font-medium">/ one-time</span>
             </div>
+
             <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
               <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>Instant Start (Within 1 Hour)</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>High Retention Real Accounts</li>
               <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -168,22 +201,50 @@
           </button>
         </div>
 
-        <!-- Card 2 -->
-        <div
+        <!-- Card 2: Instagram Likes (Popular) -->
+        <div id="card-ig-likes"
           class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
           <div
             class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
             Popular</div>
           <div>
-            <span
-              class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Instant
-              Boost</span>
-            <h3 class="text-xl font-bold text-slate-900 mt-4">2,500 Instagram Followers</h3>
-            <p class="text-slate-500 text-sm mt-1">Accelerate your profile visibility</p>
-            <div class="my-6">
-              <span class="text-4xl font-extrabold text-[#0070ba]">$7</span>
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Engagement</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mt-4">Instagram Likes</h3>
+            <p class="text-slate-500 text-sm mt-1">Accelerate your post visibility & reach</p>
+
+            <!-- Quantity Selector Dropdown -->
+            <div class="mt-5">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Select
+                Package</label>
+              <div class="relative">
+                <select onchange="updateCardPackage('ig-likes', this)"
+                  class="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-sm font-semibold rounded-xl px-3.5 py-3 pr-9 appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0070ba]/20 focus:border-[#0070ba] transition">
+                  <option value='{"price":"2","service":"500 Instagram Likes"}'>500 Likes — $2</option>
+                  <option value='{"price":"3","service":"1000 Instagram Likes"}'>1,000 Likes — $3</option>
+                  <option value='{"price":"5","service":"2500 Instagram Likes"}' selected>2,500 Likes — $5 (Recommended)
+                  </option>
+                  <option value='{"price":"8","service":"5000 Instagram Likes"}'>5,000 Likes — $8</option>
+                  <option value='{"price":"15","service":"10000 Instagram Likes"}'>10,000 Likes — $15</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-slate-400">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Display -->
+            <div class="my-6 flex items-baseline gap-1.5">
+              <span class="text-4xl font-extrabold text-[#0070ba] card-price-display">$5</span>
               <span class="text-slate-400 text-sm font-medium">/ one-time</span>
             </div>
+
             <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
               <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24">
@@ -192,37 +253,7 @@
               <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                </svg>No Password Required</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                </svg>365 Days Refill Guarantee</li>
-            </ul>
-          </div>
-          <button
-            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
-            data-price="7" data-service="2500 Instagram Followers">
-            Order Now
-          </button>
-        </div>
-
-        <!-- Card 3 -->
-        <div
-          class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <span
-              class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Engagement</span>
-            <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 Instagram Likes</h3>
-            <p class="text-slate-500 text-sm mt-1">Split across multiple photos/reels</p>
-            <div class="my-6">
-              <span class="text-4xl font-extrabold text-slate-900">$6</span>
-              <span class="text-slate-400 text-sm font-medium">/ one-time</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                </svg>Super Fast Delivery</li>
+                </svg>Split Across Multiple Photos/Reels</li>
               <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -235,7 +266,76 @@
           </div>
           <button
             class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
-            data-price="6" data-service="5000 Instagram Likes">
+            data-price="5" data-service="2500 Instagram Likes">
+            Order Now
+          </button>
+        </div>
+
+        <!-- Card 3: Instagram Views -->
+        <div id="card-ig-views"
+          class="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Viral
+                Boost</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mt-4">Instagram Views</h3>
+            <p class="text-slate-500 text-sm mt-1">Supercharge your Reels & Video reach</p>
+
+            <!-- Quantity Selector Dropdown -->
+            <div class="mt-5">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Select
+                Package</label>
+              <div class="relative">
+                <select onchange="updateCardPackage('ig-views', this)"
+                  class="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-sm font-semibold rounded-xl px-3.5 py-3 pr-9 appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0070ba]/20 focus:border-[#0070ba] transition">
+                  <option value='{"price":"2","service":"1000 Instagram Views"}'>1,000 Views — $2</option>
+                  <option value='{"price":"3","service":"2500 Instagram Views"}'>2,500 Views — $3</option>
+                  <option value='{"price":"5","service":"5000 Instagram Views"}' selected>5,000 Views — $5 (Popular)
+                  </option>
+                  <option value='{"price":"9","service":"10000 Instagram Views"}'>10,000 Views — $9</option>
+                  <option value='{"price":"18","service":"25000 Instagram Views"}'>25,000 Views — $18</option>
+                  <option value='{"price":"32","service":"50000 Instagram Views"}'>50,000 Views — $32</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-slate-400">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Display -->
+            <div class="my-6 flex items-baseline gap-1.5">
+              <span class="text-4xl font-extrabold text-slate-900 card-price-display">$5</span>
+              <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Instant 1-Second Delivery</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Compatible with Reels, Videos & IGTV</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>High Retention Impression Boost</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>No Password Required</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+            data-price="5" data-service="5000 Instagram Views">
             Order Now
           </button>
         </div>
@@ -520,6 +620,928 @@
     </div>
   </section>
 
+  <!-- ================================================================= -->
+  <!-- মেথড ১ বনাম মেথড ২ ডিভাইডার -->
+  <!-- ================================================================= -->
+  <div class="max-w-7xl mx-auto px-4 my-14">
+    <div class="relative flex py-5 items-center">
+      <div class="flex-grow border-t-2 border-dashed border-slate-300"></div>
+      <span
+        class="flex-shrink mx-4 px-6 py-2.5 bg-slate-900 text-white text-xs sm:text-sm font-bold tracking-wider rounded-full shadow-lg uppercase flex items-center gap-2">
+        <span>👇</span> বিকল্প ডিজাইন: Method 1 (Sub-Tabs Filter Pills) নিচে দেখুন <span>👇</span>
+      </span>
+      <div class="flex-grow border-t-2 border-dashed border-slate-300"></div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- METHOD 1 SECTION (Sub-Tabs / Secondary Filter Pills) -->
+  <!-- ================================================================= -->
+  <section id="services-section-method1"
+    class="py-20 bg-white relative overflow-hidden font-poppins border-t border-slate-200"
+    style="font-family: 'Poppins', sans-serif;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- সেকশন হেডার -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide mb-4 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Option B (Method 1) — Sub-Tabs Filter Pills
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Select a Platform to Explore Packages
+        </h2>
+        <p class="mt-3 text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
+          Switch between sub-tabs (Followers, Likes, Views) to see curated package cards for each service.
+        </p>
+      </div>
+
+      <!-- আধুনিক সেগমেন্টেড প্ল্যাটফর্ম ট্যাব বার -->
+      <div class="flex justify-center mb-10">
+        <div
+          class="inline-flex items-center p-1.5 bg-slate-50 border border-slate-200/90 rounded-2xl shadow-sm gap-1.5 max-w-full overflow-x-auto no-scrollbar">
+
+          <!-- Instagram Tab -->
+          <button onclick="switchM1Tab('instagram')" id="m1-tab-instagram" data-m1-platform="instagram"
+            class="m1-tab-btn active-tab flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 bg-[#0070ba] text-white shadow-md shadow-blue-600/20 whitespace-nowrap">
+            <svg class="m1-tab-icon w-5 h-5 flex-shrink-0 fill-current transition-colors duration-200"
+              style="color: #ffffff;" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            Instagram
+          </button>
+
+          <!-- YouTube Tab -->
+          <button onclick="switchM1Tab('youtube')" id="m1-tab-youtube" data-m1-platform="youtube"
+            class="m1-tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+            <svg class="m1-tab-icon w-5 h-5 flex-shrink-0 fill-current transition-colors duration-200"
+              style="color: #FF0000;" viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            YouTube
+          </button>
+
+          <!-- TikTok Tab -->
+          <button onclick="switchM1Tab('tiktok')" id="m1-tab-tiktok" data-m1-platform="tiktok"
+            class="m1-tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+            <svg class="m1-tab-icon w-5 h-5 flex-shrink-0 fill-current transition-colors duration-200"
+              style="color: #000000;" viewBox="0 0 24 24">
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.02 3.28-1.53 3.32-3.34.02-4.14.01-8.28.01-12.42z" />
+            </svg>
+            TikTok
+          </button>
+
+          <!-- Facebook Tab -->
+          <button onclick="switchM1Tab('facebook')" id="m1-tab-facebook" data-m1-platform="facebook"
+            class="m1-tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+            <svg class="m1-tab-icon w-5 h-5 flex-shrink-0 fill-current transition-colors duration-200"
+              style="color: #1877F2;" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            Facebook
+          </button>
+
+          <!-- Spotify Tab -->
+          <button onclick="switchM1Tab('spotify')" id="m1-tab-spotify" data-m1-platform="spotify"
+            class="m1-tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+            <svg class="m1-tab-icon w-5 h-5 flex-shrink-0 fill-current transition-colors duration-200"
+              style="color: #1DB954;" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.308c-.218.358-.683.473-1.041.254-2.855-1.745-6.449-2.14-10.682-1.173-.41.094-.814-.162-.907-.573-.094-.41.162-.814.573-.907 4.636-1.059 8.601-.617 11.803 1.341.358.218.473.683.254 1.058zm1.47-3.266c-.275.447-.862.59-1.309.315-3.268-2.008-8.25-2.59-12.115-1.417-.502.152-1.034-.135-1.186-.637-.152-.502.135-1.034.637-1.186 4.417-1.341 9.914-.693 13.658 1.616.447.275.59.862.315 1.309zm.126-3.41c-3.919-2.327-10.384-2.541-14.135-1.401-.6.183-1.238-.16-1.421-.76-.183-.6.16-1.238.76-1.421 4.316-1.311 11.455-1.06 15.98 1.626.54.321.716 1.02.395 1.561-.321.541-1.02.716-1.561.395z" />
+            </svg>
+            Spotify
+          </button>
+
+          <!-- SoundCloud Tab -->
+          <button onclick="switchM1Tab('soundcloud')" id="m1-tab-soundcloud" data-m1-platform="soundcloud"
+            class="m1-tab-btn flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all duration-200 whitespace-nowrap">
+            <svg class="m1-tab-icon w-5 h-5 flex-shrink-0 fill-current transition-colors duration-200"
+              style="color: #FF5500;" viewBox="0 0 24 24">
+              <path
+                d="M1.175 12.225c-.051 0-.094.045-.102.102L.8 15.006l.273 2.654c.008.058.051.102.102.102.059 0 .102-.044.11-.102l.307-2.654-.307-2.679c-.008-.057-.051-.102-.11-.102zm1.459-1.246c-.077 0-.137.06-.145.137L2.148 15l.341 3.864c.008.077.068.137.145.137.068 0 .128-.06.136-.137L3.14 15l-.37-3.972c-.008-.077-.068-.137-.136-.137zm1.621-.699c-.094 0-.17.077-.179.17l-.4 4.55.4 4.541c.009.094.085.17.179.17.085 0 .162-.076.17-.17l.444-4.541-.444-4.55c-.008-.093-.085-.17-.17-.17zm1.74-.801c-.111 0-.205.093-.213.204l-.452 5.347.452 5.338c.008.111.102.204.213.204.102 0 .196-.093.204-.204l.504-5.338-.504-5.347c-.008-.111-.102-.204-.204-.204zm1.782-.247c-.128 0-.239.111-.247.239l-.478 5.586.478 5.594c.008.128.119.239.247.239.12 0 .23-.111.239-.239l.537-5.594-.537-5.586c-.009-.128-.119-.239-.239-.239zm12.398-3.053c-.563 0-1.108.119-1.603.332-.384-2.839-2.814-5.029-5.748-5.029-.716 0-1.407.136-2.037.392-.256.102-.375.383-.281.639.094.247.375.375.631.281.537-.222 1.117-.333 1.687-.333 2.456 0 4.502 1.79 4.809 4.195.034.264.247.46.511.46.06 0 .12-.008.179-.025.503-.171 1.04-.264 1.586-.264 2.507 0 4.545 2.038 4.545 4.545s-2.038 4.545-4.545 4.545h-7.615c-.273 0-.495.222-.495.495s.222.495.495.495h7.615c3.053 0 5.535-2.481 5.535-5.535s-2.482-5.535-5.535-5.535z" />
+            </svg>
+            SoundCloud
+          </button>
+
+        </div>
+      </div>
+
+      <!-- 1. Instagram Content (Method 1) -->
+      <div id="m1-content-instagram" class="m1-tab-content">
+
+        <!-- Method 1 Sub-Tab Filter Pills (Followers | Likes | Views) -->
+        <div class="flex justify-center mb-10">
+          <div
+            class="inline-flex items-center p-1.5 bg-slate-100 rounded-2xl border border-slate-200/80 gap-1.5 shadow-inner">
+            <button onclick="switchM1SubTab('followers')" id="m1-subtab-followers"
+              class="m1-subtab-btn active-subtab flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 bg-[#0070ba] text-white shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+              </svg>
+              Followers
+            </button>
+            <button onclick="switchM1SubTab('likes')" id="m1-subtab-likes"
+              class="m1-subtab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-white/70">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                  clip-rule="evenodd" />
+              </svg>
+              Likes
+            </button>
+            <button onclick="switchM1SubTab('views')" id="m1-subtab-views"
+              class="m1-subtab-btn flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-white/70">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd"
+                  d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                  clip-rule="evenodd" />
+              </svg>
+              Views / Reels
+            </button>
+          </div>
+        </div>
+
+        <!-- Subcontent 1: Instagram Followers Packages -->
+        <div id="m1-subcontent-followers" class="m1-subcontent grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Starter</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Instagram Followers</h3>
+              <p class="text-slate-500 text-sm mt-1">High retention real profile followers</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-slate-900">$3</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Instant Start (Within 1 Hour)</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>High Retention Real Accounts</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>365 Days Refill Guarantee</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="3" data-service="1000 Instagram Followers">
+              Order Now
+            </button>
+          </div>
+
+          <!-- Card 2 (Popular) -->
+          <div
+            class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+            <div
+              class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+              Popular</div>
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Accelerated
+                Growth</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">2,500 Instagram Followers</h3>
+              <p class="text-slate-500 text-sm mt-1">Accelerate your profile visibility</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-[#0070ba]">$7</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Fast & Organic Delivery</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>High Quality Real Profiles</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>365 Days Refill Guarantee</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="7" data-service="2500 Instagram Followers">
+              Order Now
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Authority</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 Instagram Followers</h3>
+              <p class="text-slate-500 text-sm mt-1">Establish supreme account authority</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-slate-900">$13</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Priority 1-Hour Start</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Gradual Organic Pacing</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>365 Days Refill Guarantee</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="13" data-service="5000 Instagram Followers">
+              Order Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Subcontent 2: Instagram Likes Packages -->
+        <div id="m1-subcontent-likes" class="m1-subcontent hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full">Boost</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Instagram Likes</h3>
+              <p class="text-slate-500 text-sm mt-1">Real interactions on your photos</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-slate-900">$3</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Instant Start (Within 5 Mins)</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Split on Multiple Photos</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Real Post Interactions</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="3" data-service="1000 Instagram Likes">
+              Order Now
+            </button>
+          </div>
+
+          <!-- Card 2 (Popular) -->
+          <div
+            class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+            <div
+              class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+              Popular</div>
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-[#0070ba] bg-blue-50 px-3 py-1 rounded-full">Engagement</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">2,500 Instagram Likes</h3>
+              <p class="text-slate-500 text-sm mt-1">Accelerate post visibility & reach</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-[#0070ba]">$5</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Fast & Organic Delivery</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Split Across Up to 5 Posts</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Real Post Interactions</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="5" data-service="2500 Instagram Likes">
+              Order Now
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Viral
+                Surge</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 Instagram Likes</h3>
+              <p class="text-slate-500 text-sm mt-1">Push your content onto Explore feed</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-slate-900">$8</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Super Fast Delivery</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Split Across Up to 10 Posts</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Explore Algorithm Compatible</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="8" data-service="5000 Instagram Likes">
+              Order Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Subcontent 3: Instagram Views Packages -->
+        <div id="m1-subcontent-views" class="m1-subcontent hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Starter
+                Views</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">2,500 Instagram Views</h3>
+              <p class="text-slate-500 text-sm mt-1">Immediate playback start on Reels</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-slate-900">$3</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Instant 1-Second Delivery</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Supports Reels & Videos</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>High Watch Retention</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="3" data-service="2500 Instagram Views">
+              Order Now
+            </button>
+          </div>
+
+          <!-- Card 2 (Popular) -->
+          <div
+            class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+            <div
+              class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+              Popular</div>
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Reels
+                Boost</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 Instagram Views</h3>
+              <p class="text-slate-500 text-sm mt-1">Push reel onto algorithm recommendations</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-[#0070ba]">$5</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Super Fast Delivery</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Reels, Feed Videos & IGTV</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>High Watch Impression Time</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="5" data-service="5000 Instagram Views">
+              Order Now
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Viral
+                Surge</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-4">10,000 Instagram Views</h3>
+              <p class="text-slate-500 text-sm mt-1">Maximum reach for viral video campaigns</p>
+              <div class="my-6">
+                <span class="text-4xl font-extrabold text-slate-900">$9</span>
+                <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+              </div>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>1-Second Delivery Start</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Eligible for Explore Reach</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>Real Impression Stats</li>
+                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>No Password Required</li>
+              </ul>
+            </div>
+            <button
+              class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 shadow-md hover:shadow-lg text-center cursor-pointer tracking-wide"
+              data-price="9" data-service="10000 Instagram Views">
+              Order Now
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2. YouTube Content (Method 1) -->
+      <div id="m1-content-youtube" class="m1-tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full">Monetization</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 YouTube Views</h3>
+            <p class="text-slate-500 text-sm mt-1">High retention organic watch time</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">$4</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Real Worldwide Viewers</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Monetization Safe</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="4" data-service="1000 YouTube Views">Order Now</button>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+          <div
+            class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+            Popular</div>
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full">Subscribers</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">500 YouTube Subscribers</h3>
+            <p class="text-slate-500 text-sm mt-1">Non-drop channel subscribers</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-[#0070ba]">$9</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Permanent Subscribers</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>No Password Required</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="9" data-service="500 YouTube Subscribers">Order Now</button>
+        </div>
+      </div>
+
+      <!-- 3. TikTok Content (Method 1) -->
+      <div id="m1-content-tiktok" class="m1-tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 px-3 py-1 rounded-full">Followers</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 TikTok Followers</h3>
+            <p class="text-slate-500 text-sm mt-1">Unlock live streaming feature</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">$4</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Unlocks TikTok Live</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>100% Safe (No Login)</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="4" data-service="1000 TikTok Followers">Order Now</button>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+          <div
+            class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+            Popular</div>
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 px-3 py-1 rounded-full">Viral
+              FYP</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 TikTok Views</h3>
+            <p class="text-slate-500 text-sm mt-1">Push your video to FYP algorithms</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-[#0070ba]">$3</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Instant Delivery Start</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>FYP Algorithm Friendly</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="3" data-service="5000 TikTok Views">Order Now</button>
+        </div>
+      </div>
+
+      <!-- 4. Facebook Content (Method 1) -->
+      <div id="m1-content-facebook" class="m1-tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Page
+              Likes</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Facebook Page Likes</h3>
+            <p class="text-slate-500 text-sm mt-1">High credibility for business pages</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">$5</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Genuine Looking Profiles</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Safe Page URL Only</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="5" data-service="1000 Facebook Page Likes">Order Now</button>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+          <div
+            class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+            Popular</div>
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Stream
+              Views</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">2,500 Facebook Video Views</h3>
+            <p class="text-slate-500 text-sm mt-1">Boost reels & video watch reach</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-[#0070ba]">$4</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Reels & Post Videos</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Non-Drop High Retention</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="4" data-service="2500 Facebook Video Views">Order Now</button>
+        </div>
+      </div>
+
+      <!-- 5. Spotify Content (Method 1) -->
+      <div id="m1-content-spotify" class="m1-tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full">Track
+              Streams</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Spotify Plays</h3>
+            <p class="text-slate-500 text-sm mt-1">Boost algorithmic song radio reach</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">$5</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>USA & Worldwide Mix</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Eligible for Royalties</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="5" data-service="1000 Spotify Plays">Order Now</button>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+          <div
+            class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+            Popular</div>
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full">Artist
+              Profile</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 Spotify Followers</h3>
+            <p class="text-slate-500 text-sm mt-1">Grow artist account authority</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-[#0070ba]">$6</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Permanent Organic Growth</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>No Login Required</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="6" data-service="1000 Spotify Followers">Order Now</button>
+        </div>
+      </div>
+
+      <!-- 6. SoundCloud Content (Method 1) -->
+      <div id="m1-content-soundcloud"
+        class="m1-tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-slate-50/70 rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Audio
+              Growth</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">5,000 SoundCloud Plays</h3>
+            <p class="text-slate-500 text-sm mt-1">Instant song boost</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-slate-900">$5</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-200/60 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>High Retention Tracks</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Safe & Guaranteed</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="5" data-service="5000 SoundCloud Plays">Order Now</button>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-7 border-2 border-[#0070ba] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+          <div
+            class="absolute -top-3 right-6 bg-[#0070ba] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+            Popular</div>
+          <div>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Follower
+              Authority</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">1,000 SoundCloud Followers</h3>
+            <p class="text-slate-500 text-sm mt-1">Build musical credibility</p>
+            <div class="my-6"><span class="text-4xl font-extrabold text-[#0070ba]">$7</span> <span
+                class="text-slate-400 text-sm font-medium">/ one-time</span></div>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t border-slate-100 pt-6 font-medium">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Natural Delivery Speed</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>Safe Profile URL Only</li>
+            </ul>
+          </div>
+          <button
+            class="gcv-order-btn w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005a96] text-white font-semibold text-sm rounded-xl transition duration-150 text-center cursor-pointer tracking-wide"
+            data-price="7" data-service="1000 SoundCloud Followers">Order Now</button>
+        </div>
+      </div>
+
+      <!-- প্যানেল প্রমোশন ব্যানার (Method 1) -->
+      <div
+        class="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#003087] to-[#0070ba] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div>
+          <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">Automated
+            SMM Panel</span>
+          <h4 class="text-xl sm:text-2xl font-bold mt-2.5">Need bulk orders or instant 1-second delivery?</h4>
+          <p class="text-blue-100 text-sm mt-1 font-normal">Sign up on our automated system to place orders anytime and
+            track live progress.</p>
+        </div>
+        <a href="https://getcheapview.net" target="_blank" rel="noopener noreferrer"
+          class="px-6 py-3.5 bg-white hover:bg-slate-100 text-[#003087] font-bold text-sm rounded-xl transition duration-200 shadow-md whitespace-nowrap tracking-wide">
+          Sign Up Free on Panel →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- NEWSLETTER / EMAIL SUBSCRIPTION SECTION -->
+  <!-- ================================================================= -->
+  <section id="newsletter-section"
+    class="py-16 sm:py-20 bg-slate-50/80 relative overflow-hidden font-poppins border-t border-slate-200/80"
+    style="font-family: 'Poppins', sans-serif;">
+    <!-- Background subtle ambient glow -->
+    <div
+      class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none">
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div
+        class="bg-gradient-to-br from-[#0b192c] via-[#003087] to-[#0070ba] rounded-3xl p-8 sm:p-12 lg:p-14 text-white shadow-2xl relative overflow-hidden">
+
+        <!-- Decorative background circles -->
+        <div class="absolute -top-16 -right-16 w-64 h-64 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-blue-400/10 rounded-full blur-2xl pointer-events-none">
+        </div>
+
+        <div class="max-w-2xl mx-auto text-center relative z-10">
+          <!-- Top Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-blue-100 text-xs font-semibold tracking-wide mb-5 backdrop-blur-sm shadow-sm">
+            <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Special Offers & Social Growth Tips
+          </div>
+
+          <!-- Heading -->
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
+            Get Secret Discounts & Algorithm Updates
+          </h2>
+
+          <!-- Subtitle / Description -->
+          <p class="mt-3.5 text-sm sm:text-base text-blue-100/90 font-normal leading-relaxed">
+            Join 15,000+ creators & marketers. Get weekly organic growth hacks, platform safety alerts, and flash coupon
+            codes (up to 30% off) sent directly to your inbox.
+          </p>
+
+          <!-- Subscription Form -->
+          <form id="newsletter-form" onsubmit="handleNewsletterSubmit(event)" class="mt-8">
+            <div
+              class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-1.5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg focus-within:border-white/50 focus-within:bg-white/15 transition-all duration-300">
+              <div class="relative flex-grow flex items-center pl-4 pr-2">
+                <svg class="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                </svg>
+                <input type="email" id="newsletter-email" placeholder="Enter your email address..." required
+                  class="w-full bg-transparent border-0 py-3.5 pl-3 pr-2 text-white placeholder-blue-200/70 text-sm focus:outline-none font-medium" />
+              </div>
+              <button type="submit" id="newsletter-btn"
+                class="px-7 py-3.5 bg-white hover:bg-slate-100 text-[#003087] font-bold text-sm rounded-xl transition duration-200 shadow-md whitespace-nowrap tracking-wide flex items-center justify-center gap-2 cursor-pointer hover:shadow-lg active:scale-[0.98]">
+                <span>Subscribe Free</span>
+                <svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Instant Success Message (Initially Hidden) -->
+            <div id="newsletter-success"
+              class="hidden mt-4 p-3.5 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-sm font-medium flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Awesome! You're on the list. Check your inbox for your 10% coupon code! 🎉</span>
+            </div>
+
+            <!-- Trust Badges / Guarantees -->
+            <div
+              class="mt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-blue-200/80 font-medium">
+              <div class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                Zero Spam Guarantee
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5 2a2 2 0 00-2 2v14l4-2 4 2 4-2 4 2V4a2 2 0 00-2-2H5zm2 5a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1z"
+                    clip-rule="evenodd" />
+                </svg>
+                Instant 10% Off Coupon
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Unsubscribe Anytime
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ট্যাব সুইচিং জাভাস্ক্রিপ্ট -->
   <script>
     // প্রতিটি প্ল্যাটফর্মের নিজস্ব অফিসিয়াল কালার
@@ -568,11 +1590,135 @@
         }
       }
     }
+
+    // ড্রপডাউন পরিবর্তন হলে কার্ডের প্রাইস ও অর্ডার বাটনের ডেটা আপডেট করার ফাংশন
+    function updateCardPackage(cardId, selectElement) {
+      try {
+        const data = JSON.parse(selectElement.value);
+        const card = document.getElementById('card-' + cardId);
+        if (!card) return;
+
+        // প্রাইস ডিসপ্লে আপডেট
+        const priceDisplay = card.querySelector('.card-price-display');
+        if (priceDisplay) {
+          priceDisplay.textContent = '$' + data.price;
+        }
+
+        // অর্ডার বাটনের ডেটা অ্যাট্রিবিউট আপডেট (PayPal মডাল বা চেকআউটের জন্য)
+        const orderBtn = card.querySelector('.gcv-order-btn');
+        if (orderBtn) {
+          orderBtn.setAttribute('data-price', data.price);
+          orderBtn.setAttribute('data-service', data.service);
+        }
+      } catch (err) {
+        console.error('Error updating card package:', err);
+      }
+    }
+
+    // ==========================================
+    // Method 1 (Sub-Tabs / Secondary Filter Pills)
+    // ==========================================
+
+    // Method 1: Sub-tab (Followers | Likes | Views) পরিবর্তন ফাংশন
+    function switchM1SubTab(service) {
+      // সকল সাব-কন্টেন্ট লুকানো
+      document.querySelectorAll('.m1-subcontent').forEach(el => {
+        el.classList.add('hidden');
+      });
+
+      // সাব-ট্যাব বাটন রিসেট
+      document.querySelectorAll('.m1-subtab-btn').forEach(btn => {
+        btn.classList.remove('bg-[#0070ba]', 'text-white', 'shadow-sm', 'font-semibold', 'active-subtab');
+        btn.classList.add('text-slate-600', 'font-medium', 'hover:text-slate-900', 'hover:bg-white/70');
+      });
+
+      // সিলেক্ট করা সাব-কন্টেন্ট দেখানো
+      const activeContent = document.getElementById('m1-subcontent-' + service);
+      if (activeContent) {
+        activeContent.classList.remove('hidden');
+      }
+
+      // সিলেক্ট করা বাটন হাইলাইট করা
+      const activeBtn = document.getElementById('m1-subtab-' + service);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-[#0070ba]', 'text-white', 'shadow-sm', 'font-semibold', 'active-subtab');
+        activeBtn.classList.remove('text-slate-600', 'font-medium', 'hover:text-slate-900', 'hover:bg-white/70');
+      }
+    }
+
+    // Method 1: প্ল্যাটফর্ম ট্যাব সুইচিং ফাংশন
+    function switchM1Tab(platform) {
+      // সকল প্ল্যাটফর্ম কন্টেন্ট লুকানো
+      document.querySelectorAll('.m1-tab-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      // সকল ট্যাব বাটন রিসেট
+      document.querySelectorAll('.m1-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-[#0070ba]', 'text-white', 'shadow-md', 'shadow-blue-600/20', 'font-semibold', 'active-tab');
+        btn.classList.add('text-slate-600', 'font-medium', 'hover:text-slate-900', 'hover:bg-slate-100/70');
+
+        const p = btn.getAttribute('data-m1-platform');
+        const icon = btn.querySelector('.m1-tab-icon');
+        if (icon && brandColors[p]) {
+          icon.style.color = brandColors[p];
+        }
+      });
+
+      // নির্বাচিত কন্টেন্ট দেখানো
+      const activeContent = document.getElementById('m1-content-' + platform);
+      if (activeContent) {
+        activeContent.classList.remove('hidden');
+      }
+
+      // নির্বাচিত বাটন ও আইকন সক্রিয় করা
+      const activeBtn = document.getElementById('m1-tab-' + platform);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-[#0070ba]', 'text-white', 'shadow-md', 'shadow-blue-600/20', 'font-semibold', 'active-tab');
+        activeBtn.classList.remove('text-slate-600', 'font-medium', 'hover:text-slate-900', 'hover:bg-slate-100/70');
+
+        const activeIcon = activeBtn.querySelector('.m1-tab-icon');
+        if (activeIcon) {
+          activeIcon.style.color = '#ffffff';
+        }
+      }
+    }
+
+    // ==========================================
+    // Newsletter Form Submission Handler
+    // ==========================================
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('newsletter-email');
+      const successMsg = document.getElementById('newsletter-success');
+      const btn = document.getElementById('newsletter-btn');
+
+      if (emailInput && emailInput.value) {
+        btn.disabled = true;
+        btn.innerHTML = '<span>Subscribing...</span>';
+
+        setTimeout(() => {
+          btn.innerHTML = '<span>Subscribed! ✓</span>';
+          if (successMsg) {
+            successMsg.classList.remove('hidden');
+          }
+          emailInput.value = '';
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = `<span>Subscribe Free</span><svg class="w-4 h-4 text-[#0070ba]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>`;
+          }, 5000);
+        }, 600);
+      }
+    }
   </script>
 
   <style>
     #services-section,
-    #services-section * {
+    #services-section *,
+    #services-section-method1,
+    #services-section-method1 *,
+    #newsletter-section,
+    #newsletter-section * {
       font-family: 'Poppins', sans-serif !important;
     }
 
